@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com',
+  baseURL: "https://jsonplaceholder.typicode.com",
 });
 
 class APIClient<T> {
@@ -12,16 +12,12 @@ class APIClient<T> {
   }
 
   getAll = () => {
-    return axiosInstance
-      .get<T[]>(this.endpoint)
-      .then((res) => res.data);
-  }
+    return axiosInstance.get<T[]>(this.endpoint).then((res) => res.data);
+  };
 
   post = (data: T) => {
-    return axiosInstance
-      .post<T>(this.endpoint, data)
-      .then(res => res.data);
-  }
+    return axiosInstance.post<T>(this.endpoint, data).then((res) => res.data);
+  };
 }
 
 export default APIClient;
