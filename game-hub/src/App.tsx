@@ -12,13 +12,6 @@ import { Genre } from "./hooks/useGenres";
 // undefined: the absence of value
 // null: the international absence of a value
 
-export interface GameQuery {
-  genreId?: number;
-  platformId?: number;
-  sortOrder: string;
-  searchText: string;
-}
-
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
