@@ -5,11 +5,16 @@ import ContactPage from "./ContactPage";
 import UserDetail from "./UserDetail";
 import Layout from "./Layout";
 import UsersPage from "./UsersPage";
+import ErrorPage from "./ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+
+    // even if there's an error react will catch it and display this page
+    errorElement: <ErrorPage />,
+
     // the children route is already a relative to the layout so we dont need to use '/'
     children: [
       // index to true is also the same as path '/' or path ""
